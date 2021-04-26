@@ -1,6 +1,6 @@
 # Slackbot
 
-This is a simple Slackbot written in python designed to post block messages to your slack channel
+This is a simple Slackbot written in python designed to post block messages to your slack channel.  This application starts a Flask app running on port 5000 that can listen for Slack webhooks and post to a specific channel that the Slack bot has been invited to.
 
 ## Requirements
 * Python 3.7+
