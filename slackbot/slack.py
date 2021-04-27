@@ -16,9 +16,10 @@ class Slack:
 		try:
 			response = self.client.chat_postMessage(
 				channel=channel,
+				text=message,
 				blocks=blocks
 			)
-			# assert response["message"]["text"] == message
+			return response
 		except SlackApiError as e:
 			# You will get a SlackApiError if "ok" is False
 			assert e.response["ok"] is False
