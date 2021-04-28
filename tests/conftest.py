@@ -1,9 +1,15 @@
 import pytest
-from app import app as slackbot_app
+from dotenv import load_dotenv
+from flask import Flask
+from slackbot.handlers.routes import configure_routes
+
+load_dotenv()
 
 @pytest.fixture
 def app():
-    yield slackbot_app
+    app = Flask(__name__)
+    configure_routes(app)
+    yield app
 
 @pytest.fixture
 def client(app):
